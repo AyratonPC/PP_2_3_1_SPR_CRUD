@@ -5,6 +5,7 @@ import web.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import web.dao.UserDAO;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -16,6 +17,7 @@ public class UserServiceImpl implements UserService {
         this.userDAO = userDAO;
     }
 
+    @Transactional
     @Override
     public void saveUser(User user) {
         userDAO.save(user);
@@ -26,11 +28,13 @@ public class UserServiceImpl implements UserService {
         return userDAO.index();
     }
 
+    @Transactional
     @Override
     public void update(User user) {
         userDAO.update(user);
     }
 
+    @Transactional
     @Override
     public void delete(long id) {
         userDAO.delete(id);

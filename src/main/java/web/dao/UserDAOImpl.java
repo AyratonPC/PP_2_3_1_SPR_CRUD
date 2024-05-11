@@ -3,12 +3,10 @@ package web.dao;
 import web.model.User;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-@Transactional
 @Repository
 public class UserDAOImpl implements UserDAO{
 
